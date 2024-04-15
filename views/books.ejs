@@ -11,6 +11,9 @@
         <% if(books.length > 0) { %>
             <% books.forEach(book => { %>
                 <li><%= book.title %> - <%= book.publishingYear %></li>
+                <form action="/books/delete/<%= book.id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
             <% }); %>
         <% } else { %>
             <li>No books has been found</li>
